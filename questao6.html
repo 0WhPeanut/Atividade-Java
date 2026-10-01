@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 6</title>
+</head>
+<body>
+
+    <h1>Gerador de Aventuras</h1>
+
+    <button id="botao">Criar uma aventura</button>
+
+    <p id="aventura"></p>
+
+    <script>
+
+        let acoes = ['A Busca', 'A Batalha', 'O Resgate']
+        let locais = ['na Floresta Sombria', 'no Reino Perdido', 'na Montanha Misteriosa']
+        let complementos = ['do Dragão', 'do Tesouro Esquecido', 'da Espada Ancestral']
+
+        let botao = document.querySelector('#botao')
+        let aventura = document.querySelector('#aventura')
+
+        botao.onclick = gerarAventura
+
+        function gerarAventura() {
+            let acao = acoes[Math.floor(Math.random() * acoes.length)]
+            let local = locais[Math.floor(Math.random() * locais.length)]
+            let complemento = complementos[Math.floor(Math.random() * complementos.length)]
+
+            aventura.innerText = acao + ' ' + local + ' ' + complemento
+        }
+
+    </script>
+
+</body>
+</html>
