@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 7</title>
+</head>
+<body>
+
+    <img id="personagem"
+         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnTF0-fm3632Vex2H06m74iGNG9wAS94ReLw8Lw-VQaw&s=10"
+         width="500">
+
+    <p id="mensagem"></p>
+
+    <button id="trocar">Trocar imagem</button>
+
+    <script>
+
+        let imagem = document.querySelector("#personagem")
+        let paragrafo = document.querySelector("#mensagem")
+        let botao = document.querySelector("#trocar")
+
+        let imagens = [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnTF0-fm3632Vex2H06m74iGNG9wAS94ReLw8Lw-VQaw&s=10",
+            "https://upload.wikimedia.org/wikipedia/en/5/51/Dipper_Pines.png"
+        ]
+
+        let indice = 0
+
+        imagem.onclick = clicou
+        imagem.onmouseleave = saiu
+        imagem.onmouseenter = entrou
+        imagem.onmousemove = moveu
+
+        botao.onclick = trocarImagem
+
+        function clicou() {
+            paragrafo.innerText = "Ei, para de me cutucar"
+        }
+
+        function saiu() {
+            paragrafo.innerText = "Tchau!"
+        }
+
+        function entrou() {
+            paragrafo.innerText = "Ok, isso é legal"
+        }
+
+        function moveu() {
+            paragrafo.innerText = "Eu gosto de carinho"
+        }
+
+        function trocarImagem() {
+            indice = indice + 1
+
+            if (indice == imagens.length) {
+                indice = 0
+            }
+
+            imagem.src = imagens[indice]
+        }
+
+    </script>
+
+</body>
+</html>
