@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 3</title>
+</head>
+<body>
+
+    <button>Botão</button>
+    <h1></h1>
+
+    <script>
+        let frases = [
+            "Hello world",
+            "Tá calor ultimamente, né?",
+            "O IF é maneiro!",
+            "*não sei o que adicionar aqui*"
+        ]
+
+        let cores = ["blue", "red", "green", "yellow"]
+
+        let texto = document.querySelector("h1")
+        let botao = document.querySelector("button")
+
+        botao.addEventListener('click', () => {
+            texto.innerText = frases[Math.floor(Math.random() * frases.length)]
+            texto.style.color = cores[Math.floor(Math.random() * cores.length)]
+            texto.style.fontSize = Math.floor(Math.random() * 71 + 30) + "px"
+        })
+    </script>
+
+</body>
+</html>
