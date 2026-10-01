@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 4</title>
+</head>
+<body>
+    
+    <button id="aumentar">Aumentar</button>
+    <button id="zerar">Zerar</button>
+
+    <span>0</span>
+    
+    <script>
+        let botao = document.querySelector('#aumentar')
+        let botaoZerar = document.querySelector('#zerar')
+        let texto = document.querySelector('span')
+        let contador = 0
+
+        botao.onclick = clicou
+        botaoZerar.onclick = zerar
+
+        function clicou() {
+            contador = contador + 1
+            texto.innerText = contador
+        }
+
+        function zerar() {
+            contador = 0
+            texto.innerText = contador
+        }
+    </script>
+
+</body>
+</html>
