@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 9</title>
+
+    <style>
+        .sucesso {
+            background-color: green;
+            color: white;
+        }
+
+        .erro {
+            background-color: red;
+            color: white;
+        }
+
+        /* Modo escuro */
+        .escuro {
+            background-color: #222;
+            color: white;
+        }
+
+        .escuro input {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="modoEscuro">Modo escuro</button>
+
+    <br><br>
+
+    <input type="text" placeholder="Seu sabor de sorvete favorito">
+
+    <span id="mensagem"></span>
+
+    <script>
+        const campoTexto = document.querySelector('input')
+        const mensagem = document.querySelector('#mensagem')
+        const botaoModoEscuro = document.querySelector('#modoEscuro')
+
+        campoTexto.addEventListener('input', () => {
+
+            let digitado = campoTexto.value
+
+            mensagem.classList.remove('erro')
+            mensagem.classList.remove('sucesso')
+
+            if (digitado.length > 3) {
+
+                if (digitado == 'chocolate') {
+                    mensagem.innerText = 'Chocolate é bom demais'
+                    mensagem.classList.add('sucesso')
+
+                } else if (digitado == 'flocos') {
+                    mensagem.innerText = 'Ahh, mas chocolate é o meu favorito...'
+                    mensagem.classList.add('sucesso')
+
+                } else {
+                    mensagem.innerText = 'Ahh, eu esperava um sabor de sorvete...'
+                    mensagem.classList.add('erro')
+                }
+            }
+        })
+
+        botaoModoEscuro.addEventListener('click', () => {
+            document.body.classList.toggle('escuro')
+        })
+    </script>
+
+</body>
+</html>
