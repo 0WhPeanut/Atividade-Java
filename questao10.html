@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 10</title>
+</head>
+
+<body>
+
+    <h1>Galeria de Imagens</h1>
+
+    <img id="imagem" src="https://picsum.photos/id/237/600/400"
+         width="600" height="400">
+
+    <script>
+
+        const imagens = [
+            "https://picsum.photos/id/237/600/400",
+            "https://picsum.photos/id/238/600/400",
+            "https://picsum.photos/id/239/600/400",
+            "https://picsum.photos/id/240/600/400"
+        ];
+
+        let indice = 0;
+
+        function trocarImagem() {
+
+            document.getElementById("imagem").src = imagens[indice];
+
+            indice++;
+
+            if (indice >= imagens.length) {
+                indice = 0;
+            }
+        }
+
+        setInterval(trocarImagem, 5000);
+
+    </script>
+
+</body>
+</html>
